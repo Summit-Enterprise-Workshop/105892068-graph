@@ -24,14 +24,7 @@ type Order @key(fields: "id") {
   Each order has a unique id which is separate from the user or items they bought
   """
   id: ID!
-  """
-  The total cost of the order
-  """
-  total: Float
-  """
-  The date the oder was made
-  """
-  orderDate: String
+
   """
   The user who made the purchase
   """
@@ -42,6 +35,10 @@ type Order @key(fields: "id") {
   product and which size/color/feature was bought
   """
   items: [ProductVariant!]! @requiresScopes(scopes: [["order:items"]])
+  """The date the order was made"""
+  orderDate: String
+  """The total cost of the order"""
+  total: Float
 }
 
 type User @key(fields: "id") {
