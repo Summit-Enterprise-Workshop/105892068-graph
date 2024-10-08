@@ -24,7 +24,15 @@ type Order @key(fields: "id") {
   Each order has a unique id which is separate from the user or items they bought
   """
   id: ID!
+  """
+  The total cost of the order
+  """
+  orderTotal: Float
 
+  """
+  The date the oder was made
+  """
+  orderDate: String
   """
   The user who made the purchase
   """
